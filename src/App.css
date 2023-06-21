@@ -31,7 +31,7 @@ li>a:hover{
   background-color: burlywood;
   color: darkslategray;
   border-radius: 0 0 30px 30px;
-  padding: 25px;
+  padding: 24px;
 }
 
 body{
@@ -111,4 +111,37 @@ label{
 
 .balance, .text{
   font-size: xx-large;
+}
+
+@media only screen and (max-width: 710px){
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    margin-left: -30px;
+  }
+  
+  li{
+    list-style: none;
+    padding: 8px;
+    margin: 5px;
+  }
+  
+  li>a{
+    color: aliceblue;
+    padding: 10px;
+    font-size: large;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family:'Segoe UI';
+    text-transform: uppercase;
+  }
+  
+  li>a:hover{
+    background-color: burlywood;
+    color: darkslategray;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px;
+  }
 }

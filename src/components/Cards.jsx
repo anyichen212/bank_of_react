@@ -4,7 +4,7 @@ const Cards = (props) => {
     const info = props.card;
 
     //console.log(props.card);
-    //individual gifs
+    //individual money infos
     return (
         <div className="card">
             <div><b>Amount :</b> ${info[0].toFixed(2)}</div>

@@ -21,6 +21,7 @@
       const [debit, setDebit] = useState(0.0);
       const [credit, setCredit] = useState(0.0);
 
+      //run only once
     useEffect(() => {
       const d = axios.get("https://bank-of-react-b745wfs0u-ajlapid718.vercel.app/debits")
       .then(result => {
@@ -49,6 +50,8 @@
 
     }, []);
 
+    //run when the axios.get finish fetch and loaded
+    //also updates when credit and debit values change
     useEffect(() => {
         if(load){
             setAccountBalance(credit - debit);

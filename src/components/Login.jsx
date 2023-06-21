@@ -1,6 +1,6 @@
 // Login.js
 import React, { Component } from 'react'
-import { redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 class LogIn extends Component {
   constructor () {
@@ -12,6 +12,7 @@ class LogIn extends Component {
       },
       redirect: false
     }
+    
   }
 
   handleChange = (e) => {
@@ -31,7 +32,7 @@ class LogIn extends Component {
 
   render () {
     if (this.state.redirect) {
-      return redirect("/userProfile");
+      return <Navigate to={"/userProfile"} />;
     }
 
     return (
