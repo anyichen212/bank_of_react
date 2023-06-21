@@ -18,6 +18,7 @@ const Debits = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         const newArr = [];
         newArr[0] = value;
         newArr[1] = description;
@@ -25,6 +26,7 @@ const Debits = (props) => {
         newArr[2] = date;
 
         props.setDebitList(prev => {return[newArr, ...props.debitList]});
+        props.setDebit(props.debit+value);
         console.log(props.debitList);
         
       }

@@ -47,7 +47,7 @@
         if(load){
             setAccountBalance(credit - debit);
         }
-    }, [load])
+    }, [load, credit, debit])
 
       //mock log in
       const mockLogIn = (logInInfo) => {
