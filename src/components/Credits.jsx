@@ -38,6 +38,7 @@ const Credits = (props) => {
     return (
         <div>
             <h1>Credits</h1>
+            <p className='text'><b>Total Credit Amount : </b>${props.credit.toFixed(2)}</p>
             <form onSubmit={handleSubmit}>
                 <label>Enter Value In USD
                     <input 
@@ -56,7 +57,8 @@ const Credits = (props) => {
                     onChange={(e) => setDescription(e.target.value)}
                     />
                 </label>
-                <input type="submit" value="Add New Credit" />
+                <br />
+                <input className='submit' type="submit" value="Add New Credit" />
             </form>
 
             <button onClick={openView}>View Balance</button>

@@ -38,6 +38,7 @@ const Debits = (props) => {
     return (
         <div>
             <h1>Debits</h1>
+            <p className='text'><b>Total Debit Amount : </b>${props.debit.toFixed(2)}</p>
             <form onSubmit={handleSubmit}>
                 <label>Enter Value In USD
                     <input 
@@ -56,7 +57,8 @@ const Debits = (props) => {
                     onChange={(e) => setDescription(e.target.value)}
                     />
                 </label>
-                <input type="submit" value="Add New Debit" />
+                <br />
+                <input className='submit' type="submit" value="Add New Debit" />
             </form>
 
             <button onClick={openView}>View Balance</button>

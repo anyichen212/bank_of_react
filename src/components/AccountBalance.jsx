@@ -6,8 +6,8 @@ import React, { useState} from 'react';
 const AccountBalance = (props) => {
 
     return (
-        <div>
-          <p>Balance: ${props.accountBalance.toFixed(2)}</p>        
+        <div className='balance'>
+          <p><b>Balance:</b> ${props.accountBalance.toFixed(2)}</p>        
         </div>
     );
 
