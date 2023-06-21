@@ -2,7 +2,7 @@
   "name": "ttp_react_router",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anyichen212.github.io/banl_of_react/",
+  "homepage": "https://anyichen212.github.io/bank_of_react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
