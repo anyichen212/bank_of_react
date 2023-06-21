@@ -4,7 +4,7 @@ import Cards from './Cards';
 
 import AccountBalance from './AccountBalance';
 
-const Debits = (props) => {
+const Credits = (props) => {
     const[viewBalance,setViewBalance] = useState(false);
     const[value, setValue] = useState(0.0);
     const[description, setDescription] = useState("");
@@ -25,19 +25,19 @@ const Debits = (props) => {
         const newArr = [];
         newArr[0] = value;
         newArr[1] = description;
-        const date = new Date().toLocaleDateString(); ////gets current date
+        const date = new Date().toLocaleDateString(); //gets current date
         newArr[2] = date;
 
         //update Total debit amount and list to display, will also update account balance
-        props.setDebitList(prev => {return[newArr, ...props.debitList]});
-        props.setDebit(props.debit+value);
-        //console.log(props.debitList);
+        props.setCreditList(prev => {return[newArr, ...props.creditList]});
+        props.setCredit(props.credit+value);
+        //console.log(props.creditList);
         
       }
 
     return (
         <div>
-            <h1>Debits</h1>
+            <h1>Credits</h1>
             <form onSubmit={handleSubmit}>
                 <label>Enter Value In USD
                     <input 
@@ -56,7 +56,7 @@ const Debits = (props) => {
                     onChange={(e) => setDescription(e.target.value)}
                     />
                 </label>
-                <input type="submit" value="Add New Debit" />
+                <input type="submit" value="Add New Credit" />
             </form>
 
             <button onClick={openView}>View Balance</button>
@@ -68,13 +68,13 @@ const Debits = (props) => {
             </div>
           )}
 
-          <h2>Your Debit History</h2>
-            <div className='cards'>{props.debitList.map((debt,index)=>{
-                return <Cards key={index} card={debt} />
+          <h2>Your Credit History</h2>
+            <div className='cards'>{props.creditList.map((credit,index)=>{
+                return <Cards key={index} card={credit} />
             })}</div>
             
         </div>
     );
 }
 
-export default Debits;
+export default Credits;
