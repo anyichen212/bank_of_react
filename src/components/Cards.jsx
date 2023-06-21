@@ -7,7 +7,7 @@ const Cards = (props) => {
     //individual gifs
     return (
         <div className="card">
-            <div><b>Debit Amount :</b> ${info[0].toFixed(2)}</div>
+            <div><b>Amount :</b> ${info[0].toFixed(2)}</div>
             <div><b>Date :</b> {info[2]}</div>
             <div><b>Notes :</b> 
                 <p>"{info[1]}"</p>
