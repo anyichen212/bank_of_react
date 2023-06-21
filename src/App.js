@@ -6,6 +6,7 @@
     import UserProfile from './components/UserProfile';
     import LogIn from './components/Login';
     import Debits from './components/Debits';
+    import Credits from './components/Credits';
     
     const App = (props) => {
       const [accountBalance, setAccountBalance] = useState(0.0)
@@ -34,8 +35,12 @@
         const c = axios.get("https://bank-of-react-b745wfs0u-ajlapid718.vercel.app/credits")
         .then(result => {
             setCredit(result.data);
-            const d = new Date(2023,6,20);
-            setCreditList([result.data],[d],["Initial Debit"]);
+            const newArr = [];
+            newArr[0] = result.data;
+            newArr[1] = "Initial Credit"
+            const date = new Date(2023,5,20).toLocaleDateString();
+            newArr[2] = date;
+            setCreditList([newArr]);
         })
         .then(result => setLoad(true))
         });
@@ -74,6 +79,9 @@
                 <li>
                   <Link to="/debits">Debits</Link>
                 </li>
+                <li>
+                  <Link to="/credits">Credits</Link>
+                </li>
               </ul>
             </nav>
 
@@ -99,6 +107,18 @@
                   setDebit={setDebit}
                   debitList={debitList} 
                   setDebitList={setDebitList} 
+                  accountBalance={accountBalance} 
+                  setAccountBalance={setAccountBalance}
+                  />} 
+                />
+              <Route 
+                path="/credits" 
+                element={<Credits
+                  credit={credit}
+                  setCredit={setCredit}
+                  creditList={creditList}
+                  setCreditList={setCreditList}
+                  debit={debit}
                   accountBalance={accountBalance} 
                   setAccountBalance={setAccountBalance}
                   />} 

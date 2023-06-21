@@ -25,12 +25,12 @@ const Home = (props) => {
             
             <AccountBalance accountBalance={props.accountBalance} />
             
-            <button onClick={openView}>View</button>
+            <button onClick={openView}>Details</button>
           { // only show if view is true
             view && (
             <div>
-            <p>Debit: $ {(props.debit*-1).toFixed(2)}</p>
-            <p>Credit: $ {props.credit.toFixed(2)}</p>
+            <p>Total Debit: $ {(props.debit).toFixed(2)}</p>
+            <p>Total Credit: $ {props.credit.toFixed(2)}</p>
             </div>
           )}
 
